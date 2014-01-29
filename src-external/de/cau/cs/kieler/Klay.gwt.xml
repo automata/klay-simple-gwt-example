@@ -2,6 +2,7 @@
 <module>
 	<inherits name="com.google.gwt.user.User" />
 	<inherits name="org.eclipse.emf.ecore.Ecore" />
+	<inherits name="com.google.common.collect.Collect" />
 	<source path="core"/>
 	<source path="kiml"/>
 	<source path="klay"/>

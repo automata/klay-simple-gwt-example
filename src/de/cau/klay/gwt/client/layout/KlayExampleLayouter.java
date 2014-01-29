@@ -13,6 +13,8 @@
  */
 package de.cau.klay.gwt.client.layout;
 
+import com.google.gwt.user.client.Window;
+
 import de.cau.cs.kieler.core.alg.IKielerProgressMonitor;
 import de.cau.cs.kieler.core.alg.BasicProgressMonitor;
 import de.cau.cs.kieler.core.kgraph.KEdge;
@@ -187,21 +189,15 @@ public final class KlayExampleLayouter {
 	 */
 	private static void printLayoutInfo(final KNode parentNode,
 			final IKielerProgressMonitor progressMonitor) {
-		// print execution time of the algorithm run
-		System.out.println("Execution time: "
-				+ progressMonitor.getExecutionTime() * 1000 + " ms");
-
-		// print position of each node and routing of each edge
 		for (KNode childNode : parentNode.getChildren()) {
 			KShapeLayout childLayout = childNode.getData(KShapeLayout.class);
-			System.out.println(childNode.getLabels().get(0).getText()
+			Window.alert(childNode.getLabels().get(0).getText()
 					+ ": x = " + childLayout.getXpos() + ", y = "
 					+ childLayout.getYpos());
 
 			for (KEdge edge : childNode.getOutgoingEdges()) {
 				KEdgeLayout edgeLayout = edge.getData(KEdgeLayout.class);
-				System.out
-						.println("  -edge: " + edgeLayout.createVectorChain());
+				Window.alert("  -edge: " + edgeLayout.createVectorChain());
 			}
 		}
 	}
