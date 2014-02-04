@@ -16,7 +16,7 @@
     <!--                                           -->
     <!-- Any title is fine                         -->
     <!--                                           -->
-    <title>Klay GWT Starter Project</title>
+    <title>Klay GWT</title>
     
     <!--                                           -->
     <!-- This script loads your compiled module.   -->
@@ -44,12 +44,15 @@
       </div>
     </noscript>
 
-    <h1>Klay GWT Starter Project</h1>
+    <h1>Klay GWT</h1>
 
-    <table align="center">
-      <tr>
-        <td id="sendButtonContainer"></td>
-      </tr>
-    </table>
+	<script type="text/javascript">
+	var testGraph = {"processes": {"dom/GetElement_f4nkd": {"component": "dom/GetElement", "metadata": {"x": 324,"y": 144,"label": "startButton"}},"interaction/ListenMouse_1w3vt": {"component": "interaction/ListenMouse","metadata": {"x": 324,"y": 288,"label": "clickStart"}}}, "connections": [{"src": {"process": "dom/GetElement_f4nkd","port": "element"},"tgt": {"process": "interaction/ListenMouse_1w3vt","port": "element"},"metadata": {"route": "10"}}]};
+	
+	var test = function () {
+		console.log(window.klayLayout(JSON.stringify(testGraph)));
+	};
+	</script>
+
   </body>
 </html>

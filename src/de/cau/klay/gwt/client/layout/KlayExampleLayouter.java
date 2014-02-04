@@ -13,7 +13,14 @@
  */
 package de.cau.klay.gwt.client.layout;
 
+import com.google.gwt.json.client.JSONArray;
+import com.google.gwt.json.client.JSONObject;
+import com.google.gwt.json.client.JSONParser;
+import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.user.client.Window;
+
+import java.util.Set;
+import java.util.HashMap;
 
 import de.cau.cs.kieler.core.alg.IKielerProgressMonitor;
 import de.cau.cs.kieler.core.alg.BasicProgressMonitor;
@@ -30,7 +37,9 @@ import de.cau.cs.kieler.kiml.options.PortConstraints;
 import de.cau.cs.kieler.kiml.options.PortSide;
 import de.cau.cs.kieler.kiml.util.KimlUtil;
 import de.cau.cs.kieler.klay.layered.LayeredLayoutProvider;
+import de.cau.cs.kieler.klay.layered.p4nodes.NodePlacementStrategy;
 import de.cau.cs.kieler.klay.layered.properties.PortType;
+import de.cau.cs.kieler.klay.layered.properties.Properties;
 
 /**
  * Test class for the layout algorithm releases.
@@ -46,7 +55,7 @@ public final class KlayExampleLayouter {
 	 */
 	private KlayExampleLayouter() {
 	}
-
+	
 	/**
 	 * The main method.
 	 * 

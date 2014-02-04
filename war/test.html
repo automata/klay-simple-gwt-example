@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>KlayNoFloLayouter Test</title>
+    
+    <script type="text/javascript" language="javascript" src="klaygwt/klaygwt.nocache.js"></script>
+  </head>
+
+  <body>
+  
+  <textarea id="display" rows="20" cols="100"></textarea>
+  <br />
+  <button onclick="window.showLayout();">Layout</button>
+  <span id="status"></span>
+  
+  <script type="text/javascript">
+	(function(){
+      "use strict";
+
+	  window.showLayout = function () {
+	     var graph = window.graph;
+	     var start = new Date().getTime();
+	     var graphLayout = window.klayLayout(JSON.stringify(graph));
+	     var end = new Date().getTime();
+		 var time = end - start;
+	     var display = document.getElementById('display');
+	     var status = document.getElementById('status');
+	     display.value = graphLayout;
+	     status.innerHTML = 'Execution time: ' + time + ' ms'; 
+	  };
+
+      window.loadGraph = function (graph) {
+         //console.log(window.klayLayout(JSON.stringify(graph)));
+         window.graph = graph;
+      };
+      
+	  window.onload = function () {
+        var script = document.createElement('script');
+        script.src = 'photobooth.json.js';
+        document.head.appendChild(script);
+      };
+   })();
+  </script>
+  </body>
+</html>
